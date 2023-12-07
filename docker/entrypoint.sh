@@ -14,7 +14,7 @@ set -e
 
 # List of required environment variables
 #required_env_vars=("PORT" "DB_HOST" "DB_USER" "DB_PASSWORD")
-required_env_vars=("PORT")
+required_env_vars=("PORT" "DJANGO_DEBUG" "DJANGO_SECRET")
 
 # Check each variable
 for var in "${required_env_vars[@]}"; do

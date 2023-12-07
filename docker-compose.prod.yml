@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  photoveto:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        - PORT=4204
+    ports:
+      - "4204:4204"
+    restart: unless-stopped
+    mem_limit: 100M
+    environment:
+      - DJANGO_DEBUG=0
+      - DJANGO_SECRET=${DJANGO_SECRET_KEY}
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 1m
+        max-file: "10"
