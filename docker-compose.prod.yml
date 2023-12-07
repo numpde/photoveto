@@ -6,12 +6,11 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
-      args:
-        - PORT=4204
     restart: unless-stopped
     expose:
       - 4204
     environment:
+      - PORT=4204
       - DJANGO_DEBUG=0
       - DJANGO_SECRET=${DJANGO_SECRET_KEY}
       - LETSENCRYPT_HOST=$HOST
