@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import RedirectView
 
 from app import views
 
@@ -23,4 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('0', views.zero_tolerance, name='zero-tolerance'),
+
+    # Just for now
+    path('', RedirectView.as_view(url='/0', permanent=False)),
 ]
