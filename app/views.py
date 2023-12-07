@@ -19,9 +19,9 @@ def zero_tolerance(request):
 
     try:
         with md_file_path.open('r') as file:
-            html_content = markdown.markdown(file.read())
+            license_html = markdown.markdown(file.read())
     except FileNotFoundError:
-        html_content = "<p>Markdown file not found.</p>"
+        license_html = "<p>Markdown file not found.</p>"
 
     url = request.build_absolute_uri().replace("http:", "https:")
 
@@ -46,5 +46,10 @@ def zero_tolerance(request):
         log.exception(f"Could not build the QR code for this page ({url = }).")
         qr_code_url = None
 
-    # Render the template with the Markdown content and QR code URL
-    return render(request, 'app/basic-license.html', {'html_content': html_content, 'qr_code_url': qr_code_url})
+    context = {
+        'title': "Zero-tolerance digital license",
+        'html_content': license_html,
+        'qr_code_url': qr_code_url,
+    }
+
+    return render(request, 'app/basic-license.html', context=context)
