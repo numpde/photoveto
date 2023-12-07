@@ -2,18 +2,26 @@ version: '2'
 
 services:
   photoveto:
+    container_name: photoveto
     build:
       context: .
       dockerfile: docker/Dockerfile
       args:
         - PORT=4204
-    ports:
-      - "4204:4204"
     restart: unless-stopped
-    mem_limit: 100M
+    expose:
+      - 4204
     environment:
       - DJANGO_DEBUG=0
       - DJANGO_SECRET=${DJANGO_SECRET_KEY}
+      - LETSENCRYPT_HOST=$HOST
+      - VIRTUAL_HOST=$HOST
+      - VIRTUAL_PORT=4204
+      - VIRTUAL_PATH=/
+      - VIRTUAL_DEST=/
+    networks:
+      - nginxproxy_network
+    mem_limit: 100M
     logging:
       driver: "json-file"
       options:
