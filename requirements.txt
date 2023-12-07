@@ -3,4 +3,8 @@ Django==5.0
 gunicorn==21.2.0
 Markdown==3.5.1
 packaging==23.2
+Pillow==10.1.0
+pypng==0.20220715.0
+qrcode==7.4.2
 sqlparse==0.4.4
+typing_extensions==4.8.0
