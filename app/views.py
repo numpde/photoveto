@@ -23,7 +23,7 @@ def zero_tolerance(request):
     except FileNotFoundError:
         html_content = "<p>Markdown file not found.</p>"
 
-    url = "https://" + request.build_absolute_uri()
+    url = request.build_absolute_uri().replace("http:", "https:")
 
     try:
         # Generate QR code
