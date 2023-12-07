@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  test:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - DEBUG=True
+      - DJANGO_SECRET_KEY="THIS_IS_NOT_SECRET_DO_NOT_USE_IN_PRODUCTION"
