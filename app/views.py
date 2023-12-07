@@ -27,10 +27,11 @@ def zero_tolerance(request):
 
     try:
         # Generate QR code
-        qr = QRCode(version=1, box_size=10, border=2)
+        qr = QRCode(version=1, box_size=10, border=1, error_correction=0)
         qr.add_data(url)
         qr.make(fit=True)
-        img = qr.make_image(fill='black', back_color='white')
+
+        img = qr.make_image(fill_color='white', back_color='black')
 
         assert isinstance(img, PilImage)
 
