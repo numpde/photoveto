@@ -5,7 +5,7 @@
 <center>🚫 **Photography and Image Use Notice**</center>
 ---
 
-As the owner/presenter of this QR code, I assert my right to digital privacy and security with a maximum-privacy approach. Accordingly, I make the following requests:
+I assert my right to digital privacy and security with a maximum-privacy approach. Accordingly, I make the following requests:
 
 - **No Photographs:** I explicitly do not consent to be photographed or recorded in any visual form. This includes, but is not limited to, casual snapshots, commercial photography, and any other type of image or video recording.
 
