@@ -31,7 +31,7 @@ def zero_tolerance(request):
         qr.add_data(url)
         qr.make(fit=True)
 
-        img = qr.make_image(fill_color='white', back_color='black')
+        img = qr.make_image(fill_color='black', back_color='white')
 
         assert isinstance(img, PilImage)
 
