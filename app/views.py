@@ -25,7 +25,7 @@ def _get_content(filename: str):
 
 def _get_qr_code_src(url: str):
     try:
-        qr = QRCode(version=1, box_size=10, border=1, error_correction=0)
+        qr = QRCode(version=1, box_size=10, border=3, error_correction=1)
         qr.add_data(url)
         qr.make(fit=True)
 
