@@ -18,7 +18,3 @@ Our licenses:
 
 [X]: ./x
 [?]: .
-
-
-
-PhotoVeto, 2023-12-08
