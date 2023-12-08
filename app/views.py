@@ -13,19 +13,18 @@ from django.shortcuts import render
 from qrcode.main import QRCode
 
 
-def zero_tolerance(request):
-    md_file_path = Path(settings.BASE_DIR) / "app" / "content" / "zero-tolerance.md"
+def _get_content(filename: str):
+    md_file_path = Path(settings.BASE_DIR) / "app" / "content" / filename
 
     try:
         with md_file_path.open('r') as file:
-            license_html = markdown.markdown(file.read())
+            return markdown.markdown(file.read())
     except FileNotFoundError:
-        license_html = "<p>Markdown file not found.</p>"
+        return "<p>Markdown file not found.</p>"
 
-    url = request.build_absolute_uri().replace("http:", "https:")
 
+def _get_qr_code_src(url: str):
     try:
-        # Generate QR code
         qr = QRCode(version=1, box_size=10, border=1, error_correction=0)
         qr.add_data(url)
         qr.make(fit=True)
@@ -34,7 +33,6 @@ def zero_tolerance(request):
 
         assert isinstance(img, PilImage)
 
-        # Save QR code to a BytesIO buffer
         buffer = BytesIO()
         img.save(buffer, format="PNG")
         buffer.seek(0)
@@ -46,11 +44,28 @@ def zero_tolerance(request):
         log.exception(f"Could not build the QR code for this page ({url = }).")
         qr_code_src = None
 
+    return qr_code_src
+
+
+def index(request):
+    url = request.build_absolute_uri().replace("http:", "https:")
+
+    context = {
+        'title': "PhotoVeto digital licenses",
+        'html_content': _get_content("introduction.md"),
+    }
+
+    return render(request, 'app/basic.html', context=context)
+
+
+def zero_tolerance(request):
+    url = request.build_absolute_uri().replace("http:", "https:")
+
     context = {
         'title': "Zero-tolerance digital license",
-        'html_content': license_html,
+        'html_content': _get_content("zero-tolerance.md"),
         'qr_code_url': url,
-        'qr_code_src': qr_code_src,
+        'qr_code_src': _get_qr_code_src(url),
     }
 
     return render(request, 'app/basic.html', context=context)
