@@ -1,9 +1,11 @@
 Take charge of your image with PhotoVeto
 ===
 
-Define how your photos are used with a simple, personalized QR code. 
-Quick, user-friendly, and effective, it puts the control of your digital footprint in your hands. 
-Ready to protect your image rights? Start with PhotoVeto – where your preferences are our priority.
+The purpose of PhotoVeto is to give individuals control over how **images of themselves** are used and shared in the digital space.
+It allows them to set and communicate their own terms, primarily through QR codes.
+These QR codes direct to a page outlining the image usage preferences, 
+thereby promoting respect for personal image rights and privacy.
+
 
 Our licenses:
 
@@ -11,7 +13,11 @@ Our licenses:
     The "maximum-privacy" license strictly prohibits any photography or use of the individual's images, 
     underscoring the importance of digital privacy and security.
 
+*   [Custom][?].
+    Upcoming.
+
 [X]: ./x
+[?]: .
 
 
 
