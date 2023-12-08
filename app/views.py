@@ -62,8 +62,8 @@ def zero_tolerance(request):
     url = request.build_absolute_uri().replace("http:", "https:")
 
     context = {
-        'title': "Zero-tolerance digital license",
-        'html_content': _get_content("zero-tolerance.md"),
+        'title': "Maximum privacy digital license",
+        'html_content': _get_content("PV/X.md"),
         'qr_code_url': url,
         'qr_code_src': _get_qr_code_src(url),
     }

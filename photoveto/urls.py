@@ -23,8 +23,12 @@ from app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # path('', RedirectView.as_view(url='/0', permanent=False)),  # fallback
+    # TEMPORARY:
+    path('0', RedirectView.as_view(url='/x', permanent=False)),  # fallback
 
     path('', views.index, name='index'),
-    path('0', views.zero_tolerance, name='zero-tolerance'),
+
+    path('x', views.zero_tolerance, name='maximum-privacy'),
+    path('pv-x', RedirectView.as_view(url='/x', permanent=False)),
+    path('pv/x  ', RedirectView.as_view(url='/x', permanent=False)),
 ]

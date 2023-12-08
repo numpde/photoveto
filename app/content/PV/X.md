@@ -1,13 +1,11 @@
-<center> Respecting Digital Rights and Privacy </center>
+<center>PV-X (maximum privacy)</center>
 ===
-
-**Hello**, and thank you for taking the time. By scanning the QR code that brought you here, you're contributing to a culture of respect and protection for individual privacy in our increasingly digital world.
 
 
 <center>🚫 **Photography and Image Use Notice**</center>
 ---
 
-As the owner/presenter of this QR code, I assert my right to digital privacy and security with a zero-tolerance approach. Accordingly, I make the following requests:
+As the owner/presenter of this QR code, I assert my right to digital privacy and security with a maximum-privacy approach. Accordingly, I make the following requests:
 
 - **No Photographs:** I explicitly do not consent to be photographed or recorded in any visual form. This includes, but is not limited to, casual snapshots, commercial photography, and any other type of image or video recording.
 
