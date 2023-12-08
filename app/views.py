@@ -1,13 +1,12 @@
 import base64
 import markdown
-from PIL.Image import Image
-from qrcode.image.pil import PilImage
+
+from io import BytesIO
+from pathlib import Path
 
 from photoveto.twig import log
 
-from io import BytesIO
-
-from pathlib import Path
+from qrcode.image.pil import PilImage
 
 from django.conf import settings
 from django.shortcuts import render
@@ -42,15 +41,16 @@ def zero_tolerance(request):
 
         # Encode the image to base64
         qr_code_data = base64.b64encode(buffer.getvalue()).decode()
-        qr_code_url = f"data:image/png;base64,{qr_code_data}"
+        qr_code_src = f"data:image/png;base64,{qr_code_data}"
     except:
         log.exception(f"Could not build the QR code for this page ({url = }).")
-        qr_code_url = None
+        qr_code_src = None
 
     context = {
         'title': "Zero-tolerance digital license",
         'html_content': license_html,
-        'qr_code_url': qr_code_url,
+        'qr_code_url': url,
+        'qr_code_src': qr_code_src,
     }
 
-    return render(request, 'app/basic-license.html', context=context)
+    return render(request, 'app/basic.html', context=context)
