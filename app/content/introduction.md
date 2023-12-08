@@ -7,11 +7,11 @@ Ready to protect your image rights? Start with PhotoVeto – where your preferen
 
 Our licenses:
 
-*   [PV-0][0].
-    The "zero-tolerance" license strictly prohibits any photography or use of the individual's images, 
+*   [PV-X][X].
+    The "maximum-privacy" license strictly prohibits any photography or use of the individual's images, 
     underscoring the importance of digital privacy and security.
 
-[0]: ./0
+[X]: ./x
 
 
 
